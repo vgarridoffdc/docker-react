@@ -3,8 +3,6 @@ language: generic
 services:
   - docker
 
-before_install:
-  - make REACT_BUILD_DOCKERFILE
-
 script:
+  - make REACT_BUILD_DOCKERFILE
   - make REACT_RUN_TEST_DOCKERFILE_CI
