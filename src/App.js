@@ -16,6 +16,9 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+          Custom text
+        </p>
       </header>
     </div>
   );
