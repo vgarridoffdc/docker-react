@@ -1,0 +1,16 @@
+FROM node:14.17.4-alpine
+
+RUN apk add yarn
+
+USER node
+
+RUN mkdir -p /home/node/app
+WORKDIR /home/node/app
+
+COPY --chown=node:node ../package.json ./
+# COPY PACKAGE JSON FIRST TO AVOID REINSTALLING NPM PACKAGES AFTER CHANGES IN SOURCE CODE
+
+RUN yarn install
+# COPY ./ ./
+
+CMD [ "yarn", "start" ]

@@ -1,0 +1,4 @@
+FROM vgarridoff/reactapp:latest
+
+
+CMD [ "yarn", "test" ]

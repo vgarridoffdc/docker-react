@@ -1,0 +1,18 @@
+FROM node:14.17.4-alpine
+
+RUN apk add yarn
+
+USER node
+
+RUN mkdir -p /home/node/app
+WORKDIR /home/node/app
+
+COPY --chown=node:node ../package.json ./
+RUN yarn install
+
+COPY ./ ./
+
+CMD [ "yarn", "build" ]
+
+FROM nginx
+COPY --from=0 /home/node/app/build /usr/share/nginx/html
