@@ -52,9 +52,9 @@ RUN_IMAGE_WITH_DOCKERFILE_CI:
 		-v /home/node/app/node_modules \
 		${DOCKER_TAG}
 
-REACT_DOCKERFILE = ./docker/Dockerfile.dev
-REACT_TEST_DOCKERFILE = ./docker/Dockerfile.test.dev
-REACT_PROD_DOCKERFILE = ./docker/Dockerfile.prod
+REACT_DOCKERFILE = Dockerfile.dev
+REACT_TEST_DOCKERFILE = Dockerfile.test.dev
+REACT_PROD_DOCKERFILE = Dockerfile.prod
 
 REACT_DOCKERFILE_CONTEXT = .
 
@@ -66,7 +66,7 @@ APP_PORT = 3000
 NGINX_PORT = 80
 APP_PWD = $(shell pwd)
 
-REACT_DOCKER_COMPOSE = ./docker/docker-compose.yml
+REACT_DOCKER_COMPOSE = docker-compose.yml
 
 REACT_BUILD_DOCKERFILE:
 	DOCKERFILE_PATH=${REACT_DOCKERFILE} \
