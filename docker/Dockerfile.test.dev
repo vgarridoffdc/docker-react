@@ -1,4 +1,4 @@
 FROM vgarridoff/reactapp:latest
 
 
-CMD [ "yarn", "test" ]
+CMD [ "yarn", "test-coverage" ]
