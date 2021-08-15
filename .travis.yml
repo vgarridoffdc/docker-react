@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - make REACT_BUILD_DOCKERFILE
+  - docker build -t vgarrido/reactapp:latest -f ./docker/Dockerfile.dev .
 
 script:
   - make REACT_RUN_TEST_DOCKERFILE_CI
